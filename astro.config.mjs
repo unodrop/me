@@ -29,6 +29,9 @@ import markdoc from '@astrojs/markdoc';
 import keystatic from '@keystatic/astro'
 
 
+import vercel from '@astrojs/vercel';
+
+
 /**
  * Load environment variables from .env file
  * 
@@ -52,7 +55,7 @@ export default defineConfig({
    * and hosting flexibility. All pages are pre-rendered.
    */
   output: 'static',
-  
+
   /**
    * Astro integrations
    * 
@@ -60,7 +63,7 @@ export default defineConfig({
    * - Sitemap: Automatically generates sitemap.xml for search engines
    */
   integrations: [mdx(), sitemap(), react(), markdoc(), keystatic()],
-  
+
   /**
    * Site URL
    * 
@@ -74,7 +77,7 @@ export default defineConfig({
    * Set SITE_URL in your .env file (e.g., https://example.com)
    */
   site: SITE_URL || 'https://example.com',
-  
+
   /**
    * Environment variables schema (Astro v5+)
    * 
@@ -109,7 +112,7 @@ export default defineConfig({
       SOCIAL_BLUESKY: envField.string({ context: 'client', access: 'public', default: '' }),
     },
   },
-  
+
   /**
    * Image optimization configuration
    * 
@@ -135,7 +138,7 @@ export default defineConfig({
     // Remote image patterns (currently empty - add patterns as needed)
     remotePatterns: [],
   },
-  
+
   /**
    * Markdown configuration
    * 
@@ -150,5 +153,7 @@ export default defineConfig({
       theme: 'github-dark',
       wrap: true
     }
-  }
+  },
+
+  adapter: vercel()
 });
