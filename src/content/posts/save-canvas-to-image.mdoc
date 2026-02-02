@@ -1,0 +1,20 @@
+---
+title: 保存网页中的canvas为图片
+---
+```javascript
+function saveCanvasFixBlank(selector) {
+  const canvas = document.querySelector(selector);
+  if (!canvas) return alert('无匹配canvas');
+  // 修复canvas宽高错位导致的空白问题
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width;
+  canvas.height = rect.height;
+  // 重新导出
+  const a = document.createElement('a');
+  a.href = canvas.toDataURL('image/png',1);
+  a.download = `canvas_fixed_${Date.now()}.png`;
+  a.click();
+}
+// 使用
+saveCanvasFixBlank('#你的canvas选择器');
+```
