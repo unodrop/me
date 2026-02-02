@@ -1,21 +1,19 @@
 {
-  "name": "case-theme",
+  "name": "me",
   "type": "module",
   "version": "1.1.0",
-  "description": "A case-study-first portfolio theme for Astro",
+  "description": "A profile for me",
   "keywords": [
     "astro",
-    "theme",
-    "portfolio",
-    "case-study",
-    "professional"
+    "profile",
+    "me"
   ],
-  "author": "Erland <hello@erland.me>",
+  "author": "vkonven <coin9520@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/vkonven/me.git"
   },
-  "homepage": "https://case.erland.me",
+  "homepage": "https://airdrop.uno",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -38,7 +36,8 @@
     "astro": "^5.16.7",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "sharp": "^0.34.5"
+    "sharp": "^0.34.5",
+    "wrangler": "^4.61.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.0",
