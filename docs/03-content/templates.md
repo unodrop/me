@@ -146,7 +146,6 @@ company: "Their Company"
 relationship: "How you worked together (e.g., 'Direct manager at Company X')"
 quote: "Their testimonial text. Keep it concise and specific."
 date: 2024-01-15
-linkedin: "https://linkedin.com/in/their-username"
 featured: false
 ---
 ```

@@ -64,7 +64,6 @@ const testimonialsCollection = defineCollection({
     company: z.string(),
     relationship: z.string(),
     quote: z.string(),
-    linkedin: z.string().url().optional(),
     featured: z.boolean().default(false),
     date: z.coerce.date(),
   }),

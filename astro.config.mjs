@@ -107,11 +107,6 @@ export default defineConfig({
         access: "public",
         default: "",
       }),
-      SOCIAL_LINKEDIN: envField.string({
-        context: "client",
-        access: "public",
-        default: "",
-      }),
       SOCIAL_TWITTER: envField.string({
         context: "client",
         access: "public",

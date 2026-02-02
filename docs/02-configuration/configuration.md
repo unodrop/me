@@ -32,10 +32,7 @@ Leave empty to hide a platform from your site.
 | Variable | Description |
 |----------|-------------|
 | `SOCIAL_GITHUB` | GitHub profile URL |
-| `SOCIAL_LINKEDIN` | LinkedIn profile URL |
 | `SOCIAL_TWITTER` | Twitter/X profile URL |
-| `SOCIAL_MASTODON` | Mastodon profile URL |
-| `SOCIAL_BLUESKY` | Bluesky profile URL |
 
 ### Example Configuration
 
@@ -51,7 +48,6 @@ SITE_AUTHOR_EMAIL=hello@johndoe.dev
 SITE_AUTHOR_LOCATION="San Francisco, CA"
 
 SOCIAL_GITHUB=https://github.com/johndoe
-SOCIAL_LINKEDIN=https://linkedin.com/in/johndoe
 SOCIAL_TWITTER=https://twitter.com/johndoe
 ```
 

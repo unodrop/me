@@ -59,7 +59,6 @@ SITE_AUTHOR_EMAIL=you@example.com
 # Optional
 SITE_AUTHOR_BIO="Your professional bio"
 SOCIAL_GITHUB=https://github.com/username
-SOCIAL_LINKEDIN=https://linkedin.com/in/username
 ```
 
 3. Start the development server:

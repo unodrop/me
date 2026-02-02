@@ -13,7 +13,6 @@ SITE_AUTHOR_EMAIL=you@example.com
 SITE_AUTHOR_BIO="A short bio about yourself (1-2 sentences)"
 
 SOCIAL_GITHUB=https://github.com/your-username
-SOCIAL_LINKEDIN=https://linkedin.com/in/your-username
 ```
 
 Save the file and refresh your browser. The homepage now displays your name and info!

@@ -227,7 +227,6 @@ company: "Their Company"
 relationship: "How you worked together"
 quote: "Their testimonial text"
 date: 2024-01-15
-linkedin: ""       # Optional
 featured: false    # Show on homepage
 ---
 ```

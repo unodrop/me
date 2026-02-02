@@ -13,7 +13,7 @@
  * Configuration Sections:
  * - Site metadata (URL, language, title, description)
  * - Author information (name, title, bio, email, location)
- * - Social links (GitHub, LinkedIn, Twitter, Mastodon, Bluesky)
+ * - Social links (GitHub, Twitter)
  * - Navigation structure
  * 
  * @module config
@@ -105,17 +105,8 @@ export const siteConfig = {
     /** GitHub profile URL */
     github: getEnv('SOCIAL_GITHUB', ''),
     
-    /** LinkedIn profile URL */
-    linkedin: getEnv('SOCIAL_LINKEDIN', ''),
-    
     /** Twitter/X profile URL */
     twitter: getEnv('SOCIAL_TWITTER', ''),
-    
-    /** Mastodon profile URL */
-    mastodon: getEnv('SOCIAL_MASTODON', ''),
-    
-    /** Bluesky profile URL */
-    bluesky: getEnv('SOCIAL_BLUESKY', ''),
   },
   
   /**

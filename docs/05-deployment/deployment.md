@@ -200,7 +200,6 @@ Set these in your hosting platform:
 - `SITE_AUTHOR_BIO`
 - `SITE_AUTHOR_LOCATION`
 - `SOCIAL_GITHUB`
-- `SOCIAL_LINKEDIN`
 - `SOCIAL_TWITTER`
 
 **Keystatic (Vercel / server):** Only needed if you use the Keystatic admin in production. Set after first visit to `/keystatic` and GitHub App setup:

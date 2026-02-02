@@ -23,20 +23,24 @@ const sortedPosts = allPosts.sort((a, b) => b.id.localeCompare(a.id));
     type="website"
   />
 
-  <main class="page-container">
-    <header class="page-header">
-      <h1 class="page-title">{pagesConfig.posts.heading}</h1>
+  <main class="page-container posts-page">
+    <header class="posts-header">
+      <h1 class="posts-title">{pagesConfig.posts.heading}</h1>
       {pagesConfig.posts.intro && (
-        <p class="page-intro">{pagesConfig.posts.intro}</p>
+        <p class="posts-intro">{pagesConfig.posts.intro}</p>
       )}
     </header>
 
     {sortedPosts.length > 0 ? (
-      <ul class="posts-list">
+      <ul class="posts-list card-list" role="list">
         {sortedPosts.map((post) => (
           <li>
-            <a href={`/posts/${post.id}`} class="post-link">
-              {post.data.title}
+            <a href={`/posts/${post.id}`} class="post-card">
+              <span class="post-card-title">{post.data.title}</span>
+              <span class="post-card-cta" aria-hidden="true">
+                Read
+                <svg class="post-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
             </a>
           </li>
         ))}
@@ -47,28 +51,139 @@ const sortedPosts = allPosts.sort((a, b) => b.id.localeCompare(a.id));
   </main>
 
   <style>
+    .posts-page {
+      max-width: 640px;
+    }
+
+    /* Header: one clear unit — title + supporting line */
+    .posts-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .posts-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: var(--color-text);
+      margin: 0 0 0.5rem 0;
+    }
+
+    .posts-intro {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+      margin: 0;
+      max-width: 42ch;
+    }
+
     .posts-list {
       list-style: none;
       padding: 0;
-      margin: 2rem 0 0;
+      margin: 0;
     }
+
     .posts-list li {
-      margin-bottom: 0.75rem;
+      margin: 0;
     }
-    .post-link {
-      color: var(--color-accent);
+
+    /* Cards: clear hover/active feedback, CTA with arrow */
+    .post-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
       text-decoration: none;
-      font-size: 1.125rem;
+      color: inherit;
+      cursor: pointer;
+      transition:
+        border-color var(--transition-base),
+        background var(--transition-base),
+        box-shadow var(--transition-base);
     }
-    .post-link:hover {
-      text-decoration: underline;
+
+    .post-card:hover {
+      border-color: var(--color-text-muted);
+      background: var(--color-bg-secondary);
+      box-shadow: var(--shadow-sm);
     }
+
+    .post-card:active {
+      background: var(--color-bg-elevated);
+    }
+
+    .post-card:hover .post-card-cta {
+      color: var(--color-accent);
+    }
+
+    .post-card:hover .post-card-arrow {
+      transform: translateX(2px);
+      color: var(--color-accent);
+    }
+
+    .post-card:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    .post-card-title {
+      font-size: 1.0625rem;
+      font-weight: 500;
+      color: var(--color-text);
+      line-height: 1.4;
+      transition: color var(--transition-base);
+    }
+
+    .post-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+      color: var(--color-text-muted);
+      flex-shrink: 0;
+      transition: color var(--transition-base);
+    }
+
+    .post-card-arrow {
+      flex-shrink: 0;
+      transition: transform var(--transition-base), color var(--transition-base);
+    }
+
     .empty-state {
-      color: var(--color-text-secondary);
+      color: var(--color-text-muted);
       margin-top: 2rem;
+      font-size: 1rem;
     }
+
     .empty-state a {
       color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .empty-state a:hover {
+      color: var(--color-accent-hover);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .posts-title {
+        font-size: 1.5rem;
+      }
+
+      .post-card {
+        padding: 0.875rem 1rem;
+      }
+
+      .post-card-title {
+        font-size: 1rem;
+      }
     }
   </style>
 </BaseLayout>

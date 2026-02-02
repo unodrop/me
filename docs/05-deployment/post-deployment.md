@@ -48,7 +48,6 @@ View page source (Ctrl+U / Cmd+U):
 
 ### 2. Test Social Sharing
 
-Share URL on LinkedIn, Twitter, Slack. Check preview image and description.
 
 If incorrect:
 1. Verify `SITE_URL` is set correctly
